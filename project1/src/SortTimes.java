@@ -18,7 +18,7 @@ public class SortTimes extends Sorts {
                     qs[k] = rand;
                 }
                 startTime = System.nanoTime();
-                selectionSort(ss, i);
+                // selectionSort(ss, i);
                 t1 = (int) ((System.nanoTime() - startTime) / 1000000);
                 
                 startTime = System.nanoTime();
