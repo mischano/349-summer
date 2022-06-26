@@ -2,7 +2,7 @@ public class Sorts {
 
     public static  void  selectionSort (int[] arr, int N)
     {
-        /* for(int i = 0; i < N; i++) {
+        for(int i = 0; i < N; i++) {
             int index = i;
             for(int j = i + 1; j < N; j++)
             {
@@ -14,13 +14,12 @@ public class Sorts {
             int k = arr[index];
             arr[index] = arr[i];
             arr[i] = k;
-        } */
+        }
     }
 
-    //Sorts the list of N elements contained in arr[0..N-1] using the selection sort algorithm.
     public static  void  bubbleSort (int[] arr, int N)
     {
-        /* int n = N;
+        int n = N;
         boolean swapped = true;
         int temp = 0;
         while (swapped) {
@@ -37,19 +36,11 @@ public class Sorts {
         } */
     }
 
-    //Sorts the list of N elements contained in arr[0..N-1] using the improved bubble sort algorithm
-    //(see the handout).
     public static void mergeSort (int[] arr, int N)
     {
         int first = 0;
         int last = N - 1;
         mergeSort(arr, first, last);
-
-        for (int i = 0; i < N; i++) {
-            System.out.print(arr[i] + " ");
-        }
-
-        System.out.println("\n");
     }
 
     private static void mergeSort(int[] list, int first, int last) {
@@ -101,26 +92,59 @@ public class Sorts {
         }
     }
 
-    //Sorts the list of N elements contained in arr[0..N-1] using the merge sort algorithm.
     public static void quickSort (int[] arr, int N) {
-        // choose the rightmost element as pivot
-        /* int pivot = arr[N-1];
+        quickSort(arr, 0, N - 1);
+    }
 
-        int num = arr[0];
+    private static void quickSort(int[] arr, int first, int last) {
+        if (first < last) {
+            setPivotToEnd(arr, first, last);
+            int pivotIndex = splitList(arr, first, last);
+            quickSort(arr, first, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, last);
+        }
+    }
 
-        for (int i = 0; i < N-1; i++) {
-            if (arr[i] <= pivot) {
+    private static void setPivotToEnd(int[] arr, int left, int right) {
+        int center = (left + right) / 2;
+        if (arr[center] < arr[left]) {
+            int temp = arr[left];
+            arr[left] = arr[center];
+            arr[center] = temp;
+        }
+        if (arr[right] < arr[left]) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
+        if (arr[right] > arr[center]) {
+            int temp = arr[center];
+            arr[center] = arr[right];
+            arr[right] = temp;
+        }
+    }
 
-                num++;
-
-                // swapping element at i with element at j
-                int temp = arr[num];
-                arr[num] = arr[i];
-                arr[i] = temp;
+    private static int splitList(int[] arr, int left, int right) {
+        int indexL = left;
+        int indexR = right - 1;
+        while (indexR >= indexL) {
+            while (arr[indexL] < arr[right]) {
+                indexL++;
+            }
+            while (indexR >= indexL && arr[indexR] > arr[right]) {
+                indexR--;
+            }
+            if (indexR >= indexL) {
+                int temp = arr[indexL];
+                arr[indexL] = arr[indexR];
+                arr[indexR] = temp;
+                indexL++;
+                indexR--;
             }
         }
-        */
-    } 
-    //Sorts the list of N elements contained in arr[0..N-1] using the quick sort algorithm with
-    //median-of-three pivot and rearrangement of the three elements (see the handout).
+        int temp = arr[indexL];
+        arr[indexL] = arr[right];
+        arr[right] = temp;
+        return indexL;
+    }
 }
