@@ -1,4 +1,4 @@
-// Mansur Ischanov (mischano@calpoly.edu) & Luis Magallon
+// Mansur Ischanov (mischano@calpoly.edu) & Luis Magallon (lmagal01@calpoly.edu)
 // June 26th, 2022
 // Project 1
 
@@ -97,7 +97,9 @@ public class Sorts {
     }
 
     public static void quickSort (int[] arr, int N) {
-        quickSort(arr, 0, N - 1);
+        int first = 0;
+        int last = N - 1;
+        quickSort(arr, first, last);
     }
 
     private static void quickSort(int[] arr, int first, int last) {

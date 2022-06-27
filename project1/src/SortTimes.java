@@ -1,9 +1,8 @@
-// Mansur Ischanov (mischano@calpoly.edu) & Luis Magallon
+// Mansur Ischanov (mischano@calpoly.edu) & Luis Magallon (lmagal01@calpoly.edu)
 // June 26th, 2022
 // Project 1
 
 import java.util.Arrays;
-
 
 public class SortTimes extends Sorts {
     public static void main(String[] args) throws Exception {
@@ -12,7 +11,7 @@ public class SortTimes extends Sorts {
 
         System.out.println("Running Times of four sorting algorithms:");
         for (int i = 5000; i <= 160000; i *= 2) {
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 4; j++) {
                 int[] ss = new int[i];
                 int[] bs = new int[i];
                 int[] ms = new int[i];
