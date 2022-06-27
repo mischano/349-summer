@@ -1,3 +1,7 @@
+// Mansur Ischanov (mischano@calpoly.edu) & Luis Magallon
+// June 26th, 2022
+// Project 1
+
 public class Sorts {
 
     public static  void  selectionSort (int[] arr, int N)
@@ -19,8 +23,8 @@ public class Sorts {
 
     public static  void  bubbleSort (int[] arr, int N)
     {
-        int n = N;
         boolean swapped = true;
+        int n = N;
         int temp = 0;
         while (swapped) {
             swapped = false;
@@ -33,7 +37,7 @@ public class Sorts {
                 }
             }
             n--;
-        } */
+        }
     }
 
     public static void mergeSort (int[] arr, int N)
