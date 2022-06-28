@@ -1,3 +1,7 @@
+// Mansur Ischanov (mischano@calpoly.edu) & Luis Magallon (lmagal01@calpoly.edu)
+// June 28th, 2022
+// Project 2, part 1
+
 import java.io.*;
 import java.util.*;
 
@@ -9,7 +13,8 @@ public class MatrixWork {
         int col2 = B[0].length;
 
         if (col1 != row2) {
-            throw new IllegalArgumentException("col and row don't match");
+            throw new IllegalArgumentException("usage: the number of " +
+            " columns in A must be equal to the number of rows in B\n");
         }
         int[][] C = new int[row1][col2];
         
@@ -25,13 +30,15 @@ public class MatrixWork {
 
     public static void main(String[] args) throws Exception {
         int col, row;
-
-        Scanner sc = new Scanner(System.in); // new scanner 
+        
+        Scanner sc = new Scanner(System.in); 
         System.out.print("file name:");
         String str = sc.nextLine();
-        sc.close(); // close scanner
+        sc.close(); 
 
-        File fd = new File("project2/src/" + str);    
+        String dir = System.getProperty("user.dir"); // get pwd
+        // File fd = new File(str);    
+        File fd = new File(dir + "/" + str);    
         Scanner file = new Scanner(fd); // new scanner
 
         // Matrix A 
@@ -54,14 +61,19 @@ public class MatrixWork {
             }
         }
         file.close();   // close scanner
-        int[][] C = matrixProduct(A, B);
 
-        System.out.println("Product matrix:");
-        for (int i = 0; i < C.length; i++) {
-            for (int j = 0; j < C[0].length; j++) {
-                System.out.print(C[i][j] + " ");
-            }
-            System.out.println();
+        try {
+            int[][] C = matrixProduct(A, B);
+            System.out.println("Product matrix:");
+            for (int i = 0; i < C.length; i++) {
+                for (int j = 0; j < C[0].length; j++) {
+                    System.out.print(C[i][j] + " ");
+                }
+                System.out.println();
         }
+        } catch (IllegalArgumentException e) {
+            System.out.println("error: Incompatible Matrices");
+        }
+
     }
 }
