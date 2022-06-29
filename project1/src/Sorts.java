@@ -11,7 +11,13 @@ public class Sorts {
                     index = j;
                 }
             }
+            int smallNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallNumber;
         }
+        for(int x = 0; x < arr.length; x++)
+        System.out.println(arr[x] +" " );
+
     }
     //Sorts the list of N elements contained in arr[0..N-1] using the selection sort algorithm.
     public static  void  bubbleSort (int[] arr, int N)
@@ -36,10 +42,24 @@ public class Sorts {
     //(see the handout).
     public static void mergeSort (int[] arr, int N)
     {
-
+        int first = 0;
+        int last = N-1;
+        mergeSort(arr, first, last);
         //runtime O(nlogn)
 
     }
+
+    private static void mergeSort(int[] list, int first, int last){
+
+        if(first<last)
+        {
+            int middle= (first + last)/2;
+            mergeSort(list, first,middle);
+            mergeSort(list, middle+1);
+        }
+    }
+
+    private
     //Sorts the list of N elements contained in arr[0..N-1] using the merge sort algorithm.
     public static void quickSort (int[] arr, int N) {
         // choose the rightmost element as pivot
