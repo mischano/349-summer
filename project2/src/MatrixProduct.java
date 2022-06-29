@@ -24,10 +24,14 @@ public class MatrixProduct {
             }
         }
         int[][] C = new int[row1][col2];
-        for(int i = 0;i < row1; i++)
-        {
-            
+        for (int i = 0; i < row1; i++) {
+            for (int j = 0; j < col2; j++) {
+                for (int k = 0; k < col1; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
         }
+        return C;
     }
 
 
@@ -47,13 +51,13 @@ public class MatrixProduct {
     }
     //Compute and return the product of A, B matrices using “simple” DAC algorithm presented in class.
 
-    public static  int[][]  matrixProduct_Strassen(int[][] A,  int[][] B)
-    {
-        int row1 = A.length;
+    //public static  int[][]  matrixProduct_Strassen(int[][] A,  int[][] B)
+    {//
+       /* int row1 = A.length;
         int row2 = B.length;
         int col1 = A[0].length;
         int col2 = B[0].length;
-        return C;
-    }
+        return C;*/
+    }//
     //Compute and return the product of A, B matrixes using Strassen’s algorithm presented in class.
 }
