@@ -1,0 +1,38 @@
+Running Times of four sorting algorithms:
+N=5000: T_ss=20, T_bs=35, T_ms=2, T_qs=1
+N=5000: T_ss=15, T_bs=32, T_ms=0, T_qs=0
+N=5000: T_ss=9, T_bs=31, T_ms=0, T_qs=0
+N=5000: T_ss=9, T_bs=32, T_ms=0, T_qs=0
+N=5000: T_ss=9, T_bs=32, T_ms=0, T_qs=0
+
+N=10000: T_ss=37, T_bs=154, T_ms=1, T_qs=0
+N=10000: T_ss=36, T_bs=154, T_ms=1, T_qs=0
+N=10000: T_ss=36, T_bs=153, T_ms=1, T_qs=0
+N=10000: T_ss=36, T_bs=154, T_ms=1, T_qs=0
+N=10000: T_ss=36, T_bs=91, T_ms=1, T_qs=0
+
+N=20000: T_ss=146, T_bs=436, T_ms=2, T_qs=1
+N=20000: T_ss=145, T_bs=434, T_ms=2, T_qs=1
+N=20000: T_ss=145, T_bs=434, T_ms=2, T_qs=1
+N=20000: T_ss=145, T_bs=435, T_ms=2, T_qs=1
+N=20000: T_ss=147, T_bs=436, T_ms=2, T_qs=1
+
+N=40000: T_ss=579, T_bs=1946, T_ms=4, T_qs=3
+N=40000: T_ss=589, T_bs=1938, T_ms=4, T_qs=3
+N=40000: T_ss=580, T_bs=1939, T_ms=9, T_qs=3
+N=40000: T_ss=581, T_bs=1927, T_ms=4, T_qs=3
+N=40000: T_ss=577, T_bs=1936, T_ms=4, T_qs=3
+
+N=80000: T_ss=2352, T_bs=8057, T_ms=29, T_qs=7
+N=80000: T_ss=2321, T_bs=8031, T_ms=14, T_qs=7
+N=80000: T_ss=2336, T_bs=8040, T_ms=12, T_qs=6
+N=80000: T_ss=2322, T_bs=8020, T_ms=13, T_qs=7
+N=80000: T_ss=2363, T_bs=8168, T_ms=11, T_qs=7
+
+N=160000: T_ss=9312, T_bs=32601, T_ms=28, T_qs=15
+N=160000: T_ss=9277, T_bs=33146, T_ms=25, T_qs=14
+N=160000: T_ss=9325, T_bs=32912, T_ms=28, T_qs=14
+N=160000: T_ss=9508, T_bs=33116, T_ms=23, T_qs=14
+N=160000: T_ss=9292, T_bs=32823, T_ms=23, T_qs=14
+
+End of output
