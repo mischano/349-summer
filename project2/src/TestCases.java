@@ -6,6 +6,15 @@ public class TestCases extends MatrixProduct{
     
     public static void main(String[] args) {
         int [][] A, B, C, D;
+        
+        // Incompatible matrices
+        int [][] a = { {1, 1}, {1, 1}};
+        int [][] b = { {1, 1, 1}, {2, 2, 2}, {3, 3, 3}};
+        try {
+            matrixProduct_DAC(a, b);
+        } catch (IllegalArgumentException e) {
+            System.out.println("error: Incompatible Matrices");
+        } // End
 
         for (int i = N; i <= N_MAX; i *= 2) {
             // Randomize matrices
