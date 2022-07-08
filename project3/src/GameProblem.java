@@ -7,37 +7,34 @@ public class GameProblem {
 
     public static void game(int n, int m, int[][] A)
     {
-        //int[][]A
-        //collects max route of each value from A
         int [][]S = new int[n][m];
-
-        //
         int [][]R = new int[n][m];
 
     }
     static void main(String args[]) throws FileNotFoundException {
-        int col, row;
+        int[][] A;
 
-        Scanner sc = new Scanner(System.in);
+        /* Read file name */
+        Scanner sc = new Scanner(System.in);    // open scanner
         System.out.print("file name:");
         String str = sc.nextLine();
-        sc.close();
+        sc.close(); // close scanner
 
-        String dir = System.getProperty("user.dir"); // get pwd
-        // File fd = new File(str);
-        File fd = new File(dir + "/" + str);
+        /* Read file content */
+        File fd = new File(str);    
         Scanner file = new Scanner(fd); // new scanner
 
-        // Matrix that is read from file
-        row = file.nextInt();
-        col = file.nextInt();
-        int[][] A = new int[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
+        int n = file.nextInt();
+        int m = file.nextInt();
+        A = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
                 A[i][j] = file.nextInt();
             }
         }
+        file.close(); // close scanner
 
+        game(A.length, A[0].length, A);
     }
 
 }
