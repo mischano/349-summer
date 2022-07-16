@@ -65,16 +65,16 @@ public class ChangeMaker {
             for (int j = 0; j < d.length; j++) {
                 rem = i - d[j];
                 if (rem == 0) {
-                    C[i - 1] = 1;
                     A[i - 1] = j;
+                    C[i - 1] = 1;
                     min = 0;
                 } else if (rem > 0) {
                     index = 1;
                     sum = C[rem - 1];
                     if (min > index + sum) {
-                        C[i - 1] = min;
                         A[i - 1] = j;
                         min = index + sum;
+                        C[i - 1] = min;
                     }
                 }
             }
