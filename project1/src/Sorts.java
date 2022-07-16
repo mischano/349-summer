@@ -15,15 +15,9 @@ public class Sorts {
                     index = j;
                 }
             }
-<<<<<<< HEAD
-            int smallNumber = arr[index];
-            arr[index] = arr[i];
-            arr[i] = smallNumber;
-=======
             int k = arr[index];
             arr[index] = arr[i];
             arr[i] = k;
->>>>>>> 87769eb7db00ef5e546cc976824900f22ef57dfe
         }
         for(int x = 0; x < arr.length; x++)
         System.out.println(arr[x] +" " );
@@ -52,33 +46,9 @@ public class Sorts {
     public static void mergeSort (int[] arr, int N)
     {
         int first = 0;
-<<<<<<< HEAD
-        int last = N-1;
-        mergeSort(arr, first, last);
-        //runtime O(nlogn)
-
-    }
-
-    private static void mergeSort(int[] list, int first, int last){
-
-        if(first<last)
-        {
-            int middle= (first + last)/2;
-            mergeSort(list, first,middle);
-            mergeSort(list, middle+1);
-        }
-    }
-
-    private
-    //Sorts the list of N elements contained in arr[0..N-1] using the merge sort algorithm.
-    public static void quickSort (int[] arr, int N) {
-        // choose the rightmost element as pivot
-        int pivot = arr[N-1];
-=======
         int last = N - 1;
         mergeSort(arr, first, last);
     }
->>>>>>> 87769eb7db00ef5e546cc976824900f22ef57dfe
 
     private static void mergeSort(int[] list, int first, int last) {
         if (first < last) {
