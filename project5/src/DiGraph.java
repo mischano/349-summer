@@ -105,4 +105,83 @@ public class DiGraph {
             System.out.format("\n");
         }
     }
+    //////////////////////////////////////Part 3
+    private VertexInfo[] BFS(int s)
+    {
+        int n = ll.length;
+        VertexInfo[] VA = new VertexInfo[n];
+
+
+        for(int i = 1; i < n; i++)
+        {
+            VA[i].distance = -1;
+            VA[i].predecessor = -1;
+        }
+        VA[s].distance = 0;
+        LinkedList<Integer> regQueue = new LinkedList<>();
+        regQueue.addLast(s);
+        while(!regQueue.isEmpty())
+        {
+            int u = regQueue.removeFirst();
+            for(int v : ll[u])
+                if(VA[v].distance == -1)
+                {
+                    VA[v].distance = VA[u].distance + 1;
+                    VA[v].predecessor = u;
+                    regQueue.addLast(v);
+                }
+        }
+
+        return VA;
+
+
+    }
+
+   
+
+    //method returns shortest distance from vertex to vertex
+    public int lengthOfPath(int from, int to)
+    {
+        int vDistance = 0;
+        VertexInfo[] VA  = BFS(from);
+          if (VA[to].distance == -1)
+          {
+              vDistance = 0;
+          }
+          else
+              while(from != to)
+              {
+                  to = VA[to].predecessor;
+              }
+              vDistance = from + vDistance;
+
+
+     return vDistance;
+    }
+
+    public void printPath(int from, int to)
+    {
+        String printP = null;
+        VertexInfo[] VA  = BFS(from);
+        if (VA[to].distance == -1)
+        {
+            System.out.println("No path");
+        }
+        else
+            printP = "";
+            while(from != to)
+            {
+                printP ="->" + to + printP;
+                to = VA[to].predecessor;
+            }
+        printP = from + printP;
+        System.out.println(printP);
+    }
+
+
+    public class VertexInfo
+    {
+        private int distance;
+        private int predecessor;
+    }
 }
